@@ -1,0 +1,7 @@
+python/*
+.idea/*
+.gradle*
+gradle*
+build/*
+
+
