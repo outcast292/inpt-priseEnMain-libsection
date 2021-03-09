@@ -57,6 +57,7 @@ public class Libsection extends Application {
         alert.showAndWait();
     }
 
+
     @Override
     public void start(Stage primaryStage) {
         Scene sc;
@@ -67,6 +68,8 @@ public class Libsection extends Application {
             stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(sc);
             stage.setTitle("Libsection");
+            stage.toFront();
+            stage.centerOnScreen();
             stage.show();
 /*
 if(!PythonSetup.check_env()){
@@ -74,8 +77,7 @@ if(!PythonSetup.check_env()){
               //TODO fix this mess
             }*/
 
-            stage.toFront();
-            stage.centerOnScreen();
+
             PythonSetup.setup_env();
 
         } catch (Exception e) {

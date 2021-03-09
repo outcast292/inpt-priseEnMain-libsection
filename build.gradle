@@ -25,6 +25,10 @@ dependencies {
 // https://mvnrepository.com/artifact/com.opencsv/opencsv
     implementation group: 'com.opencsv', name: 'opencsv', version: '5.3'
 
+    // https://mvnrepository.com/artifact/com.itextpdf/kernel
+    compile group: 'com.itextpdf', name: 'kernel', version: '7.1.9'
+// https://mvnrepository.com/artifact/com.itextpdf/layout
+    compile group: 'com.itextpdf', name: 'layout', version: '7.1.9'
 }
 
 

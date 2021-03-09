@@ -24,6 +24,7 @@ public class Predictor {
         stage.setScene(new Scene(parent));
         stage.centerOnScreen();
         stage.setResizable(false);
+        stage.setAlwaysOnTop(true);
         stage.show();
         Task task = new Task() {
             @Override
