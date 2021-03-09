@@ -13,7 +13,6 @@ mainClassName = 'ma.ac.inpt.Libsection'
 applicationName = 'Libsection'
 
 
-
 repositories {
     mavenCentral()
 }
@@ -23,6 +22,8 @@ dependencies {
     implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.34.0'
 // https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j
     implementation group: 'net.lingala.zip4j', name: 'zip4j', version: '2.7.0'
+// https://mvnrepository.com/artifact/com.opencsv/opencsv
+    implementation group: 'com.opencsv', name: 'opencsv', version: '5.3'
 
 }
 
@@ -32,8 +33,6 @@ jlink {
     launcher {
         name = project.name
     }
-
-
 
 
     jpackage {
@@ -51,3 +50,7 @@ jlink {
 
 }
 
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-Xlint:unchecked'
+    options.deprecation = true
+}

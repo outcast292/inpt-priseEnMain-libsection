@@ -2,6 +2,7 @@ package ma.ac.inpt.setup;
 
 import javafx.concurrent.Task;
 import javafx.scene.control.Alert;
+import javafx.stage.StageStyle;
 import ma.ac.inpt.Libsection;
 import ma.ac.inpt.controllers.Loading;
 import net.lingala.zip4j.ZipFile;
@@ -13,8 +14,6 @@ import java.nio.file.Files;
 
 public class PythonSetup {
 
-
-
     public static boolean check_env() {
         File zip = new File("python", "detection.py");
         return zip.exists();
@@ -25,8 +24,8 @@ public class PythonSetup {
         Task task = new Task() {
             @Override
             protected Object call() throws Exception {
-                 Process p = null;
-                   String output = "";
+                Process p = null;
+                String output = "";
                 try {
                     Loading.property_loading.setValue(0.1d);
                     ProcessBuilder builder = new ProcessBuilder("python", "-m", "venv", "python/venv").inheritIO();
@@ -57,16 +56,18 @@ public class PythonSetup {
                     Libsection.showAlert(Alert.AlertType.ERROR, "Erreur", "erreur pendant l'init", e.getLocalizedMessage());
                 }
                 System.out.println(output);
-            return  output;
+                return output;
             }
 
         };
         task.setOnSucceeded(event -> {
             //System.out.println("e " + task.getValue());
-
+            Libsection.changeUtility(StageStyle.DECORATED);
+            Libsection.changeScene("Main");
 
         });
         new Thread(task).start();
+
         //System.out.println(output);
     }
 
@@ -80,6 +81,7 @@ public class PythonSetup {
             try {
                 //InputStream scriptIn = getClass().getResourceAsStream("zip/python_req.zip");
                 InputStream scriptIn = PythonSetup.class.getClassLoader().getResourceAsStream("detection.py");
+                assert scriptIn != null;
                 Files.copy(scriptIn, zip.toPath());
                 String source = "python/detection.zip";
                 String destination = "python/";

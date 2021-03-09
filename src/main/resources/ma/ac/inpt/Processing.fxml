@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="507.0" style="-fx-background-color: GAINSBORO;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ProgressIndicator layoutX="221.0" layoutY="95.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="66.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="221.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="95.0" />
+      <Text layoutX="112.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chargement de fichier, patienter SVP" wrappingWidth="284.01171875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

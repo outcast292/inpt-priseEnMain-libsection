@@ -26,6 +26,13 @@ public class Libsection extends Application {
         return fxmlLoader.load();
     }
 
+    public static void changeUtility(StageStyle st) {
+        stage.close();
+        stage = new Stage();
+        stage.initStyle(st);
+        stage.show();
+    }
+
     public static void changeScene(String scene) {
         Scene sc;
         try {
@@ -33,9 +40,8 @@ public class Libsection extends Application {
             stage.setScene(sc);
             stage.setTitle("LeManager");
             stage.show();
-            stage.setMaximized(true);
-            stage.setMaximized(false);
-            stage.setMaximized(true);
+            stage.setResizable(false);
+            stage.centerOnScreen();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -62,7 +68,8 @@ public class Libsection extends Application {
             stage.setScene(sc);
             stage.setTitle("Libsection");
             stage.show();
-/*            if(!PythonSetup.check_env()){
+/*
+if(!PythonSetup.check_env()){
                 System.out.println("env not setted up");
               //TODO fix this mess
             }*/
