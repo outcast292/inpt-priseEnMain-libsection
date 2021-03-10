@@ -29,7 +29,7 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #182023;">
                      <children>
-                        <LineChart fx:id="chart_spectre" alternativeColumnFillVisible="true" animated="false" layoutX="15.0" layoutY="186.0" legendVisible="false" prefHeight="402.0" prefWidth="426.0" style="-fx-background-color: white;" title="representation de spectre" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="186.0">
+                        <LineChart fx:id="chart_spectre" alternativeColumnFillVisible="true" animated="false" layoutX="15.0" layoutY="186.0" legendVisible="false" prefHeight="402.0" prefWidth="426.0" style="-fx-background-color: white;" title="Representation de spectre" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="186.0">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -37,14 +37,14 @@
                             <NumberAxis side="LEFT" />
                           </yAxis>
                         </LineChart>
-                        <Button layoutX="294.0" layoutY="52.0" mnemonicParsing="false" onAction="#openFileExplorer" prefHeight="31.0" prefWidth="116.0" text="charger fichier" AnchorPane.bottomAnchor="519.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="52.0" />
+                        <Button layoutX="294.0" layoutY="52.0" mnemonicParsing="false" onAction="#openFileExplorer" prefHeight="31.0" prefWidth="116.0" text="Charger fichier" AnchorPane.bottomAnchor="519.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="52.0" />
                         <TextField fx:id="file_input" disable="true" editable="false" layoutX="26.0" layoutY="52.0" prefHeight="30.0" prefWidth="232.0" AnchorPane.bottomAnchor="520.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="52.0" />
                         <Button layoutX="105.0" layoutY="124.0" mnemonicParsing="false" onAction="#printReport" prefHeight="36.0" prefWidth="246.0" text="Imprimer Rapport" AnchorPane.bottomAnchor="442.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="124.0" />
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #182023;">
                      <children>
-                        <BarChart fx:id="chart_concentration" animated="false" layoutX="45.0" layoutY="25.0" legendVisible="false" prefHeight="298.0" prefWidth="364.0" style="-fx-background-color: white;" title="les concetrations" AnchorPane.bottomAnchor="301.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="25.0">
+                        <BarChart fx:id="chart_concentration" animated="false" layoutX="45.0" layoutY="25.0" legendVisible="false" prefHeight="298.0" prefWidth="364.0" style="-fx-background-color: white;" title="Les concentrations" AnchorPane.bottomAnchor="301.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="25.0">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" fx:id="xAxisx" />
                           </xAxis>
@@ -66,7 +66,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Text fill="#544848" strokeType="OUTSIDE" strokeWidth="0.0" text="Valeurs Numeriques" textAlignment="CENTER" underline="true" GridPane.columnSpan="2">
+                              <Text fill="#544848" strokeType="OUTSIDE" strokeWidth="0.0" text="Valeurs Numeriques" textAlignment="CENTER" GridPane.columnSpan="2">
                                  <font>
                                     <Font size="21.0" />
                                  </font>
@@ -74,13 +74,13 @@
                               <TextField fx:id="p_input" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="93.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="P" GridPane.rowIndex="1" />
                               <TextField fx:id="mg_input" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="93.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MG" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mg" GridPane.rowIndex="2" />
                               <TextField fx:id="n_input" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="93.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="N" GridPane.rowIndex="3" />
                               <TextField fx:id="k_input" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="93.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="K" GridPane.rowIndex="4" />
                               <TextField fx:id="cu_input" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="93.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CU" GridPane.rowIndex="5" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cu" GridPane.rowIndex="5" />
                            </children>
                            <padding>
                               <Insets left="5.0" right="5.0" />
@@ -94,11 +94,11 @@
          <top>
             <MenuBar BorderPane.alignment="CENTER">
               <menus>
-                <Menu mnemonicParsing="false" text="options">
+                <Menu mnemonicParsing="false" text="Options">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#openFileExplorer" text="ouvrir fichier" />
-                    <MenuItem mnemonicParsing="false" onAction="#seeHistorics" text="voir  historique" />
-                        <MenuItem mnemonicParsing="false" onAction="#close" text="fermer" />
+                    <MenuItem mnemonicParsing="false" onAction="#openFileExplorer" text="Charger fichier" />
+                    <MenuItem mnemonicParsing="false" onAction="#seeHistorics" text="Voir  historique" />
+                        <MenuItem mnemonicParsing="false" onAction="#close" text="Fermer" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="?">
@@ -112,7 +112,7 @@
          <bottom>
             <Pane prefHeight="37.0" prefWidth="920.0" BorderPane.alignment="CENTER">
                <children>
-                  <Text layoutX="633.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="par ASEDS INE 2020-2023" wrappingWidth="272.13671875">
+                  <Text layoutX="633.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="par ASEDS  promo 2023" wrappingWidth="272.13671875">
                      <font>
                         <Font size="15.0" />
                      </font>

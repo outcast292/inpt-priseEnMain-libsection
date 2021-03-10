@@ -47,14 +47,14 @@ public class PythonSetup {
                     output = new String(processStdOut.readAllBytes());
                     p.waitFor();
                     Loading.property_loading.setValue(0.95d);
-                    Loading.stringProperty.setValue("Initialisation de la base de donnée");
+                    Loading.stringProperty.setValue("Initialisation de la base de donnees");
                     DB_connector.init();
                     Thread.sleep(200);
                     Loading.property_loading.setValue(1d);
-                    Loading.stringProperty.setValue("lancement");
+                    Loading.stringProperty.setValue("Lancement");
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
-                    Libsection.showAlert(Alert.AlertType.ERROR, "Erreur", "erreur pendant l'init", e.getLocalizedMessage());
+                    Libsection.showAlert(Alert.AlertType.ERROR, "Erreur", "erreur pendant l'initialisation", e.getLocalizedMessage());
                 }
                 System.out.println(output);
                 return output;

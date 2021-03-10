@@ -100,7 +100,7 @@ public class Main {
         if (valide) {
             TextInputDialog dialog = new TextInputDialog();
             dialog.setTitle("Entrer le nom de ce scan");
-            dialog.setHeaderText("ce nom va etre utilisé pour la tracabilité de fichier aussi");
+            dialog.setHeaderText("ce nom va etre utilisé pour la tracabilite de fichier aussi");
             dialog.setContentText("Merci de saisir un nom valide");
 // Traditional way to get the response value.
             Optional<String> result = dialog.showAndWait();
@@ -139,7 +139,7 @@ public class Main {
 
     @FXML
     void showCredits(ActionEvent event) {
-        Libsection.showAlert(Alert.AlertType.INFORMATION, "Credits", "Cette application a ete realisé par ASEDS 2020-2023", "L'application permet de predire les concentration des mineraux apartir d'un csv de spectroscopy");
+        Libsection.showAlert(Alert.AlertType.INFORMATION, "Credits", "Cette application a ete realise par ASEDS 2020-2023", "L'application permet de predire les concentration des elements a partir d'un csv de spectroscopy");
     }
 
     @FXML
@@ -168,10 +168,10 @@ public class Main {
             chart_spectre.getData().clear();
             XYChart.Series<String, Float> p = new XYChart.Series<>();
             p.getData().add(new XYChart.Data<>("P", Float.parseFloat(res[0])));
-            p.getData().add(new XYChart.Data<>("MG", Float.parseFloat(res[1])));
+            p.getData().add(new XYChart.Data<>("Mg", Float.parseFloat(res[1])));
             p.getData().add(new XYChart.Data<>("N", Float.parseFloat(res[2])));
             p.getData().add(new XYChart.Data<>("K", Float.parseFloat(res[3])));
-            p.getData().add(new XYChart.Data<>("CU", Float.parseFloat(res[4])));
+            p.getData().add(new XYChart.Data<>("Cu", Float.parseFloat(res[4])));
             chart_concentration.getData().add(p);
             try (CSVReader dataReader = new CSVReader(new FileReader(input))) {
                 String[] nextLine;

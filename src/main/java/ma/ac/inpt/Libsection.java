@@ -39,8 +39,10 @@ public class Libsection extends Application {
         try {
             sc = new Scene(loadFXML(scene));
             stage.setScene(sc);
-            stage.setTitle("LeManager");
+            stage.setTitle("Libsection");
             stage.show();
+            stage.getIcons().add(new Image(Libsection.class.getResourceAsStream("img/icone.png")));
+
             stage.setResizable(false);
             stage.centerOnScreen();
 
@@ -68,7 +70,6 @@ public class Libsection extends Application {
             sc = new Scene(p);
             stage.initStyle(StageStyle.UNDECORATED);
             stage.getIcons().add(new Image(getClass().getResourceAsStream("img/icone.png")));
-
             stage.setScene(sc);
             stage.setTitle("Libsection");
             stage.toFront();
