@@ -10,7 +10,7 @@ import ma.ac.inpt.controllers.Main;
 
 import java.io.IOException;
 import java.io.InputStream;
-
+@SuppressWarnings("unchecked")
 public class Predictor {
     public static void predict() {
         Parent parent = null;
@@ -28,7 +28,7 @@ public class Predictor {
         stage.show();
         Task task = new Task() {
             @Override
-            protected Object call() throws Exception {
+            protected Object call()  {
 
                 Process p = null;
                 String output = "";
@@ -49,8 +49,11 @@ public class Predictor {
                 return output;
             }
 
+
         };
+
         task.setOnSucceeded(event -> {
+
             stage.close();
 
             String[] str = ((String) task.getValue()).split(";");

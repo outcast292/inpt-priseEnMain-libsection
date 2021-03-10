@@ -19,7 +19,7 @@ public class PythonSetup {
         return zip.exists();
 
     }
-
+@SuppressWarnings("unchecked")
     public static void setup_env() {
         Task task = new Task() {
             @Override

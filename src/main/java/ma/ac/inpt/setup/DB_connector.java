@@ -37,7 +37,7 @@ public class DB_connector {
 
     }
 
-    public static boolean addEntrie(String zone_name, String[] entry) {
+    public static boolean addEntrie(String zone_name, String[] entry) throws SQLException {
         Boolean val = false;
         SimpleDateFormat dateformater = new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -49,13 +49,12 @@ public class DB_connector {
             st.setFloat(5, Float.parseFloat(entry[2]));
             st.setFloat(6, Float.parseFloat(entry[3]));
             st.setFloat(7, Float.parseFloat(entry[4]));
-            if (st.execute())
-                val= true;
-            else
-                throw new Exception("erreur d'insertion dans la base de données");
+            val = st.execute();
+
 
         } catch (Exception e) {
             e.printStackTrace();
+            throw  e;
         }
         return  val;
     }

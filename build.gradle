@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.8'
-    id "org.beryx.jlink" version "2.17.2"
+    id "org.beryx.jlink" version "2.23.3"
 
 }
 
@@ -42,10 +42,10 @@ jlink {
     jpackage {
         // Set the environment property BADASS_JLINK_JPACKAGE_HOME or explicitly configure the below property
         //jpackageHome = 'C:\\Program Files\\Java\\jdk-14'
-        //imageOptions = ['--icon', 'src/main/resources/com/x7lib/img/favicon.ico']
+        imageOptions = ['--icon', 'src/main/resources/ma/ac/inpt/img/icone.ico']
         skipInstaller = false
         installerType = 'msi'
-        installerOptions = ['--win-menu', '--win-shortcut', '--win-per-user-install', '--win-dir-chooser', '--copyright', 'Copyrigth 2020 Othmane Mdarhri']
+        installerOptions = ['--win-menu', '--win-shortcut', '--win-per-user-install', '--win-dir-chooser', '--copyright', 'Copyrigth 2021 ASEDS PROMO 2023']
         appVersion = project.version
         imageName = project.name
         installerName = "Setup " + project.name

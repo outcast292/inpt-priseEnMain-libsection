@@ -100,7 +100,7 @@ public class Main {
         if (valide) {
             TextInputDialog dialog = new TextInputDialog();
             dialog.setTitle("Entrer le nom de ce scan");
-            dialog.setHeaderText("ce nom va etre utilisé pour la tracabilite de fichier aussi");
+            dialog.setHeaderText("ce nom va etre utilise enregistrer les resultat de prediction dans une BDD locale");
             dialog.setContentText("Merci de saisir un nom valide");
 // Traditional way to get the response value.
             Optional<String> result = dialog.showAndWait();

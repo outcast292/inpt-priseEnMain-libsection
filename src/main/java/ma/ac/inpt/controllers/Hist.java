@@ -75,7 +75,7 @@ public class Hist {
         });
         tableView.setItems(DB_connector.getEntries());
         String[] s = cntr.getText().split(":");
-        cntr.setText(s[0] +": " +  tableView.getItems().size() + " Entrees");
+        cntr.setText(s[0] + ": " + tableView.getItems().size() + " Entree" + (tableView.getItems().size() > 1 ? "s" : ""));
 
     }
 
