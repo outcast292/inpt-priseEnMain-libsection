@@ -164,8 +164,8 @@ public class Main {
             n_input.setText(res[2]);
             k_input.setText(res[3]);
             cu_input.setText(res[4]);
-            chart_concentration.getData().removeAll();
-            chart_spectre.getData().removeAll();
+            chart_concentration.getData().clear();
+            chart_spectre.getData().clear();
             XYChart.Series<String, Float> p = new XYChart.Series<>();
             p.getData().add(new XYChart.Data<>("P", Float.parseFloat(res[0])));
             p.getData().add(new XYChart.Data<>("MG", Float.parseFloat(res[1])));

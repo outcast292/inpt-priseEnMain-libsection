@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -66,6 +67,8 @@ public class Libsection extends Application {
             Pane p = (Pane) loadFXML("Loading");
             sc = new Scene(p);
             stage.initStyle(StageStyle.UNDECORATED);
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("img/icone.png")));
+
             stage.setScene(sc);
             stage.setTitle("Libsection");
             stage.toFront();
