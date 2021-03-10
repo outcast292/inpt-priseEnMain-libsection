@@ -11,7 +11,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import ma.ac.inpt.setup.PythonSetup;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class Libsection extends Application {
     public static Stage stage;
@@ -25,6 +27,12 @@ public class Libsection extends Application {
     public static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Libsection.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
+    }
+
+    public static InputStream loadRssourceAsStream(String ressource) throws FileNotFoundException {
+        InputStream x = Libsection.class.getResourceAsStream(ressource);
+        if (x == null) throw new FileNotFoundException("Fichier non Trouve");
+        return x;
     }
 
     public static void changeUtility(StageStyle st) {
@@ -60,7 +68,6 @@ public class Libsection extends Application {
         alert.showAndWait();
     }
 
-
     @Override
     public void start(Stage primaryStage) {
         Scene sc;
@@ -80,7 +87,6 @@ if(!PythonSetup.check_env()){
                 System.out.println("env not setted up");
               //TODO fix this mess
             }*/
-
 
             PythonSetup.setup_env();
 

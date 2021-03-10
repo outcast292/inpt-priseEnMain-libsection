@@ -27,6 +27,8 @@ public class PythonSetup {
                 Process p = null;
                 String output = "";
                 try {
+                    if(!check_env())
+                        moveFiles();
                     Loading.property_loading.setValue(0.1d);
                     ProcessBuilder builder = new ProcessBuilder("python", "-m", "venv", "python/venv").inheritIO();
                     builder.redirectErrorStream(true);
@@ -81,10 +83,9 @@ public class PythonSetup {
         if (!zip.exists()) {
             try {
                 //InputStream scriptIn = getClass().getResourceAsStream("zip/python_req.zip");
-                InputStream scriptIn = PythonSetup.class.getClassLoader().getResourceAsStream("detection.py");
-                assert scriptIn != null;
+                InputStream scriptIn = Libsection.loadRssourceAsStream("setup/python_req.zip");
                 Files.copy(scriptIn, zip.toPath());
-                String source = "python/detection.zip";
+                String source = "python/python_req.zip";
                 String destination = "python/";
                 ZipFile zipFile = new ZipFile(source);
                 zipFile.extractAll(destination);
