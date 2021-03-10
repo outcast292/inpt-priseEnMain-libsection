@@ -1,6 +1,5 @@
 package ma.ac.inpt.controllers;
 
-import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.layout.element.Image;
 import com.opencsv.CSVReader;
@@ -20,6 +19,7 @@ import javafx.scene.image.WritableImage;
 import javafx.stage.FileChooser;
 import ma.ac.inpt.Libsection;
 import ma.ac.inpt.exporter.PDF;
+import ma.ac.inpt.setup.DB_connector;
 import ma.ac.inpt.setup.Predictor;
 
 import javax.imageio.ImageIO;
@@ -109,13 +109,14 @@ public class Main {
                     Libsection.showAlert(Alert.AlertType.ERROR, "Erreur", null, "Nom de fichier ne doit pas etre nul");
                 else {
                     try {
+                        DB_connector.addEntrie(s, res);
                         ByteArrayOutputStream chart_spectr_bs = new ByteArrayOutputStream();
                         ByteArrayOutputStream chart_con_bs = new ByteArrayOutputStream();
-                        ImageIO.write(SwingFXUtils.fromFXImage(chart_spectre.snapshot(new SnapshotParameters(), new WritableImage(400,400)), null), "png", chart_spectr_bs);
-                        ImageIO.write(SwingFXUtils.fromFXImage(chart_concentration.snapshot(new SnapshotParameters(), new WritableImage(400,400)), null), "png", chart_con_bs);
+                        ImageIO.write(SwingFXUtils.fromFXImage(chart_spectre.snapshot(new SnapshotParameters(), new WritableImage(400, 400)), null), "png", chart_spectr_bs);
+                        ImageIO.write(SwingFXUtils.fromFXImage(chart_concentration.snapshot(new SnapshotParameters(), new WritableImage(400, 400)), null), "png", chart_con_bs);
                         Image chart_spectr_img = new Image(ImageDataFactory.create(chart_spectr_bs.toByteArray()));
                         Image chart_con_img = new Image(ImageDataFactory.create(chart_con_bs.toByteArray()));
-                        PDF.printReport(s, new Date(), res,chart_spectr_img,chart_con_img);
+                        PDF.printReport(s, new Date(), res, chart_spectr_img, chart_con_img);
                     } catch (Exception e) {
                         e.printStackTrace();
                         Libsection.showAlert(Alert.AlertType.ERROR, "Erreur", "erreur pendant l'ouverture de fichier", e.getLocalizedMessage());
@@ -133,12 +134,12 @@ public class Main {
 
     @FXML
     void seeHistorics(ActionEvent event) {
-
+        Libsection.changeScene("Hist");
     }
 
     @FXML
     void showCredits(ActionEvent event) {
-
+        Libsection.showAlert(Alert.AlertType.INFORMATION, "Credits", "Cette application a ete realisé par ASEDS 2020-2023", "L'application permet de predire les concentration des mineraux apartir d'un csv de spectroscopy");
     }
 
     @FXML

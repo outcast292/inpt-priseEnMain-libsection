@@ -47,7 +47,8 @@ public class PythonSetup {
                     output = new String(processStdOut.readAllBytes());
                     p.waitFor();
                     Loading.property_loading.setValue(0.95d);
-                    Loading.stringProperty.setValue("Initialisation");
+                    Loading.stringProperty.setValue("Initialisation de la base de donnée");
+                    DB_connector.init();
                     Thread.sleep(200);
                     Loading.property_loading.setValue(1d);
                     Loading.stringProperty.setValue("lancement");
