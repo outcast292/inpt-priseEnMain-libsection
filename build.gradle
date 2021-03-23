@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.8'
-    id "org.beryx.jlink" version "2.23.3"
+    id "org.beryx.jlink" version "2.23.4"
 
 }
 
@@ -45,11 +45,10 @@ jlink {
         imageOptions = ['--icon', 'src/main/resources/ma/ac/inpt/img/icone.ico']
         skipInstaller = false
         installerType = 'msi'
-        installerOptions = ['--win-menu', '--win-shortcut', '--win-per-user-install', '--win-dir-chooser', '--copyright', 'Copyrigth 2021 ASEDS PROMO 2023']
+        installerOptions = ['--win-menu', '--win-shortcut', '--win-per-user-install', '--win-dir-chooser', '--copyright', 'Copyrigth 2021 ASEDS PROMO 2023','--vendor', 'ASEDS PROMO 2023','--app-version', version]
         appVersion = project.version
         imageName = project.name
-        installerName = "Setup " + project.name
-
+        installerName =  project.name
     }
 
 }
